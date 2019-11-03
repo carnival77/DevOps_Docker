@@ -11,14 +11,11 @@ services:
 
   db:
     image: postgres:9.4
-    #build: .
     volumes:
       - .:/docker-entrypoint/initdb.d
-   # environment:
-#      - POSTGRES_DB=db
- #     - POSTGRES_USERNAME=aaa
-  #    - POSTGRES_PASSWORD=aaa
-   #   - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+    environment:
+      - POSTGRES_PASSWORD=0325
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8
     networks:
       - result-tier
       - back-tier
