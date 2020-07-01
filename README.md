@@ -14,6 +14,7 @@ Result screen :
 ![DevOps_result](https://user-images.githubusercontent.com/52997401/86203389-d79ff500-bb9f-11ea-8962-a5c42e433790.png)
 
 Your docker-compose file should contain:
+
 5 services:
 
 poll: build your poll image and redirect port 5000 of the host to the port 80 of the image.
