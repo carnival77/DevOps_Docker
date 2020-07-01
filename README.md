@@ -1,5 +1,5 @@
-# DevOps_Kubernetes
-Implemented Web Poll service employing Kubernetes in Epitech.
+# DevOps_Docker
+Implemented Web Poll service employing Docker in Epitech.
 
 The application you are working on during this project is a simple poll web application. Poll is a Python Flask
 web application that gathers the votes to push them into a Redis queue. The Java Worker consumes the
@@ -13,17 +13,22 @@ structure :
 Result screen : 
 ![DevOps_result](https://user-images.githubusercontent.com/52997401/86203389-d79ff500-bb9f-11ea-8962-a5c42e433790.png)
 
-required files : 
-1 load balancer, 2 databases and 3 services, two of which will be routed using Traefik.
-
-3 services :
-poll
-result
-worker
-
-2 databses : 
-redis
-postgres
-
-1 load balancer : 
-traefik
+Your docker-compose file should contain:
+5 services:
+ poll:
+ build your poll image and redirect port 5000 of the host to the port 80 of the image.
+ redis:
+ use an existing image of redis and open port 6379
+ worker:
+ build your worker image.
+ db:
+ representing the database that will be used by the apps. You must use an existing image of
+postgres.
+ result:
+ build your result image and redirect port 5001 of the host to the port 80 of the image.
+3 networks:
+ poll-tier to allow poll to communicate with redis
+ result-tier to allow result to communicate with db
+ back-tier to allow worker to communicate with redis and db
+1 volume:
+ db-data will make the database data persistent, if the container dies.
