@@ -15,20 +15,16 @@ Result screen :
 
 Your docker-compose file should contain:
 5 services:
- poll:
- build your poll image and redirect port 5000 of the host to the port 80 of the image.
- redis:
- use an existing image of redis and open port 6379
- worker:
- build your worker image.
- db:
- representing the database that will be used by the apps. You must use an existing image of
-postgres.
- result:
- build your result image and redirect port 5001 of the host to the port 80 of the image.
+poll: build your poll image and redirect port 5000 of the host to the port 80 of the image.
+redis: use an existing image of redis and open port 6379
+worker: build your worker image.
+db: representing the database that will be used by the apps. You must use an existing image of postgres.
+result:build your result image and redirect port 5001 of the host to the port 80 of the image.
+
 3 networks:
- poll-tier to allow poll to communicate with redis
- result-tier to allow result to communicate with db
- back-tier to allow worker to communicate with redis and db
+poll-tier to allow poll to communicate with redis
+result-tier to allow result to communicate with db
+back-tier to allow worker to communicate with redis and db
+
 1 volume:
- db-data will make the database data persistent, if the container dies.
+db-data will make the database data persistent, if the container dies.
