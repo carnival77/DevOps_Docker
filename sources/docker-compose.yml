@@ -1,6 +1,7 @@
 version: "3"
 services:
 
+  # use an existing image of redis and open port 6379
   redis:
     image: "redis:alpine"
     expose: 
@@ -9,6 +10,7 @@ services:
       - poll-tier
       - back-tier
 
+  #representing the database that will be used by the apps. You must use an existing image of postgres.
   db:
     image: postgres:9.4
     volumes:
@@ -20,15 +22,17 @@ services:
       - result-tier
       - back-tier
 
+# build your poll image and redirect port 5000 of the host to the port 80 of the image.
   poll:
     build: ./poll
     ports:
-      - "5000:80"
+      - "5000:80" # poll을 담은 docker 컨테이너가 외부와 5000번 포트로 연결되고, 컨테이너 내의 앱은 80번 포트로 expose 되면서, docker 컨테이너와는 내부에서 그 80번 포트로 연결된다. 외부에서는 5000번 포트로 컨테이너를 사용 가능하다
     networks:
       - poll-tier
     depends_on:
       - redis
     
+  # build your result image and redirect port 5001 of the host to the port 80 of the image.
   result:
     build: ./result
     ports:
@@ -38,6 +42,7 @@ services:
     depends_on:
       - db
     
+  # build your worker image.
   worker:
     build: ./worker
     networks:
