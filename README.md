@@ -22,13 +22,18 @@ application fetches the votes from the DB and displays the result.
 #### i.	Python과 Node JS로 작성된 poll, result 프론트 엔드 소스 코드
 #### ii.	Redis 와 PostgreSQL을 활용한 데이터 전송 및 저장 기능
 #### iii.	Java로 작성된 worker 백엔드 소스코드
-### B.	클라우드 : digital ocean
-### E.	구체적 프로세스
+### B.	구체적 프로세스
 #### i.	Docker compose 후, http://localhost:5000  로 접속하면, poll 투표 화면이 보인다.
 #### ii.	투표를 하면, 투표 데이터가 캐시로 Redis에 저장된다.
 #### iii.	Worker 백엔드는 이것을 Postgres DB에 vote 데이터테이블을 만든 후 저장한다. 
 #### iv.	http://localhost:5001 로 redirect 되어 투표가 집계된 후의 result 결과 화면이 보인다.
 
-Result : 
+### C. 결과 화면
+#### i. 투표 화면 ( http://localhost:5000 ) 
+##### 1. 선택 전
+![image](https://user-images.githubusercontent.com/52997401/131967179-187e2b32-f3cf-432e-9227-a4d7e08c1984.png)
+##### 2. 선택 후
+![image](https://user-images.githubusercontent.com/52997401/131967291-392229a6-6756-4da6-897c-3d84389c914a.png)
+#### ii. 결과 화면 ( http://localhost:5001 )
 ![DevOps_result](https://user-images.githubusercontent.com/52997401/86203389-d79ff500-bb9f-11ea-8962-a5c42e433790.png)
 
