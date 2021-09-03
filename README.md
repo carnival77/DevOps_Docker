@@ -31,9 +31,12 @@ application fetches the votes from the DB and displays the result.
 ### C. 결과 화면
 #### i. 투표 화면 ( http://localhost:5000 ) 
 ##### 1. 선택 전
-![image](https://user-images.githubusercontent.com/52997401/131967179-187e2b32-f3cf-432e-9227-a4d7e08c1984.png)
+![image](https://user-images.githubusercontent.com/52997401/131967470-b5ad2bea-98fb-4c38-bc2e-9c814f0bc802.png)
 ##### 2. 선택 후
-![image](https://user-images.githubusercontent.com/52997401/131967291-392229a6-6756-4da6-897c-3d84389c914a.png)
+![image](https://user-images.githubusercontent.com/52997401/131967503-9e8da17d-7ed2-4956-ac8f-b067f0023ebe.png)
 #### ii. 결과 화면 ( http://localhost:5001 )
 ![DevOps_result](https://user-images.githubusercontent.com/52997401/86203389-d79ff500-bb9f-11ea-8962-a5c42e433790.png)
+
+### D. 실행 방법
+sources 폴더에서 "docker compose up"  명령어 실행
 
