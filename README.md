@@ -23,7 +23,7 @@ application fetches the votes from the DB and displays the result.
 #### ii.	Redis 와 PostgreSQL을 활용한 데이터 전송 및 저장 기능
 #### iii.	Java로 작성된 worker 백엔드 소스코드
 ### B.	구체적 프로세스
-#### i.	Docker compose 후, http://localhost:5000  로 접속하면, poll 투표 화면이 보인다.
+#### i.	source 폴더에서 "docker compose up" 명령어를 입력 후, http://localhost:5000  로 접속하면, poll 투표 화면이 보인다.
 #### ii.	투표를 하면, 투표 데이터가 캐시로 Redis에 저장된다.
 #### iii.	Worker 백엔드는 이것을 Postgres DB에 vote 데이터테이블을 만든 후 저장한다. 
 #### iv.	http://localhost:5001 로 redirect 되어 투표가 집계된 후의 result 결과 화면이 보인다.
