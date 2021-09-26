@@ -34,7 +34,9 @@ application fetches the votes from the DB and displays the result.
 ![image](https://user-images.githubusercontent.com/52997401/131967470-b5ad2bea-98fb-4c38-bc2e-9c814f0bc802.png)
 ##### 2. 선택 후
 ![image](https://user-images.githubusercontent.com/52997401/131967503-9e8da17d-7ed2-4956-ac8f-b067f0023ebe.png)
-#### ii. 결과 화면 ( http://localhost:5001 )
+#### ii. 결과 화면 1,2 ( http://localhost:5001 )
+![image](https://user-images.githubusercontent.com/52997401/134813480-cac69293-4acc-46db-918d-19e012de4df5.png)
+
 ![DevOps_result](https://user-images.githubusercontent.com/52997401/86203389-d79ff500-bb9f-11ea-8962-a5c42e433790.png)
 
 ### D. 실행 방법
